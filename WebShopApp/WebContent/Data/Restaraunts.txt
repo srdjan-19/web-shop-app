@@ -1,0 +1,5 @@
+0260d938-dbcd-499d-9cfd-4dc9ccc8032b;2 Å tapa;Dm;PIZZERIA;Å opska salata-;;
+a8608994-8aa2-4e96-b9ee-eb4977d969ca;Restoran 88;Bulevar OsloboÄ‘enja 20;CHINESE;RiÅ¾oto-;;
+c77f81c8-f665-4c15-b570-1447a7f2b5e9;Kod Pere 3;Bulevar Cara Lazara 34;GRILL;Å opska salata-;Ledeni Ä�aj breskva,Coca Cola Light,;
+5abb85fd-8714-4a61-996c-aefba8c5b663;Dva Å tapiÄ‡a 2;Bulevar Cara Lazara 66;CHINESE;RiÅ¾oto-;Ledeni Ä�aj Å¡umsko voÄ‡e,Coca Cola Light,;
+fb543ddc-ac1e-4383-a2b5-9ddb32433acc;Kod Pere 2;Bulevar Cara Lazara 32;GRILL;Å opska salata-Kupus-Pohovano meso-;Ledeni Ä�aj breskva,Ledeni Ä�aj Å¡umsko voÄ‡e,;

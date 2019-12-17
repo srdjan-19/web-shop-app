@@ -1,0 +1,91 @@
+<div data-ng-if="adminOnly">
+    <div class="frame mx-auto p-4  w-25" data-ng-if="currentNumberOfArticles > 0">
+        <table class="table table-light text-dark table-striped text-center mb-4 mr-2 w-100">
+            <tr class="thead-dark">
+                <th>Articles</th>
+                <th>Portion</th>
+                <th>Number of<br /> portions</th>
+            </tr>
+            <tr data-ng-repeat="article in articles">
+                <td>
+                    {{article.name}}
+                </td>
+                <td>
+                    {{article.quantity}} {{article.unit}}
+                </td>
+                <td>
+                    {{article.nop}}
+                </td>
+            </tr>
+        </table>
+        <div class="input-group mb-3 ml-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text font-weight-bold" for="inputGroupSelect01">BUYER</label>
+            </div>
+            <div>
+                <select class="custom-select custom-select-md" data-ng-model="buyerUsername" required>
+                    <option data-ng-repeat="buyer in buyers" selected>
+                        {{buyer.username}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group mb-3 ml-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text font-weight-bold" for="inputGroupSelect01">DELIVERER</label>
+            </div>
+            <div>
+                <select class="custom-select custom-select-md" data-ng-model="delivererUsername" required>
+                    <option data-ng-repeat="deliverer in deliverers" selected>
+                        {{deliverer.username}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group ml-2">
+            <label for="exampleTextarea" class="font-weight-bold text-dark">Note</label>
+            <textarea class="form-control w-100" id="note" rows="3" data-ng-model="order.note"></textarea>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success text-white font-weight-bold"
+                data-ng-click="completeOrder(order, buyerUsername, delivererUsername)">
+                COMPLETE ORDER
+            </button>
+        </div>
+    </div>
+
+    <table class="table table-dark table-striped table-hover text-center mx-2 my-4 w-100">
+        <tr class="thead-dark text-center">
+            <th>Date of order</th>
+            <th>Buyer</th>
+            <th>Deliverer</th>
+            <th>Articles</th>
+            <th>State</th>
+            <th>Note</th>
+            <th>Actions</th>
+        </tr>
+        <tr data-ng-repeat="order in orders" class="orange">
+            <td class="w-25">{{order.dateOfOrder }}</td>
+            <td>{{order.buyer.username}}</td>
+            <td>{{order.deliverer.username}}</td>
+            <td class="w-25">
+                <ul>
+                    <li data-ng-repeat="article in order.articles"> {{article.name}}</li>
+                </ul>
+            </td>
+            <td>
+                {{order.state}}
+            </td>
+            <td class="w-25">
+                {{order.note}}
+            </td>
+
+            <td class="mx-auto w-25" data-ng-if="adminOnly">
+                <a class="btn btn-warning mr-2 text-white font-weight-bold" data-toggle="modal" data-target="#popUpdate"
+                    aria-expanded="false" data-ng-click="prepareUpdate(order)">UPDATE</a>
+                <a class="btn btn-danger mr-2 text-white font-weight-bold" data-ng-click="deleteOrder(order)">DELETE</a>
+            </td>
+        </tr>
+    </table>
+    <div data-ng-include="'parts/update-order.html'"></div>
+</div>

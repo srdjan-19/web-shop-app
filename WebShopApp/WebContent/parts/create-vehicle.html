@@ -1,0 +1,41 @@
+<div class="modal fade" id="popCreate" tabindex="-1" role="dialog" aria-labelledby="popCreate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="w-50 mx-auto pb-4" method="post" data-ng-submit="createVehicle(vehicle)">
+                <div class="form-group">
+                    <div class="modal-header">
+                        <div class="text-center">
+                            <p class="h4 text-success text-center font-weight-bold mt-4">CREATE
+                                VEHICLE</p>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control my-3" placeholder="Brand" data-ng-model="vehicle.brand"
+                        required>
+                    <input type="text" class="form-control mt-3" placeholder="Model" data-ng-model="vehicle.model"
+                        required><br>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                        </div>
+                        <select class="custom-select" data-ng-model="vehicle.type" required>
+                            <option value="BICYCLE">BICYCLE</option>
+                            <option value="SCOOTER">SCOOTER</option>
+                            <option value="CAR">CAR</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control mt-3" placeholder="Registration number"
+                            data-ng-model="vehicle.registrationNumber" required><br>
+                        <input type="text" class="form-control" placeholder="Manufactured"
+                            data-ng-model="vehicle.manufactured" required><br>
+                        <input type="text" class="form-control" placeholder="Note" data-ng-model="vehicle.note"
+                            required><br>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success btn-block font-weight-bold">CONFIRM</button>
+                    <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold"
+                        data-dismiss="modal">CLOSE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

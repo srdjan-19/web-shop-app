@@ -1,0 +1,16 @@
+4b29a8a1-70dd-4bbd-a57e-ddad45c7b58b;Å opska salata;200;SveÅ¾a;250;g;3;
+3650fe0f-55e8-4007-9229-ac88920c693c;Kupus;100;SveÅ¾;250;g;1;
+2df6f8de-682c-4e50-8743-824b33417523;Pohovano meso;250;SveÅ¾e;200;g;0;
+10c6d1b5-b969-4a13-b39e-8992d2cde0cf;Kupus salata;120;OdliÄ�na;120;g;0;
+156fd007-756e-433d-9bf7-1e7a9bea1eda;Coca Cola;150;OsveÅ¾ava;250;ml;0;
+e356f590-95e8-4508-a23d-eb3f9c806ece;Sprite;150;OsveÅ¾ava;250;ml;0;
+f6ce6354-4806-46ae-91cd-eaa3219d51bf;Orangina;150;OsveÅ¾ava;250;ml;2;
+9ec78c3e-519d-41ad-ba7d-f33f559459bf;Å veps;150;OsveÅ¾ava;250;ml;1;
+e33638f5-7ab4-4cdb-be9d-01989b0fa85b;Coca Cola Zero;150;OsveÅ¾ava;250;ml;0;
+e3eec9f0-ec68-44ae-b768-ab266f11cd69;Sola;150;OsveÅ¾ava;250;ml;0;
+14a9620c-62d2-4f3a-94cf-f457acdabafb;Sola Multivitamin;150;OsveÅ¾ava;250;ml;0;
+6618fa26-0ce5-49e2-9c66-ab3dfbadf21a;Ledeni Ä�aj breskva;150;OsveÅ¾ava;250;ml;0;
+2805f62e-5ab1-49ce-8ecc-dcd97483f3be;Coca Cola Light;150;OsveÅ¾ava;250;ml;1;
+d33a12ab-91df-44ad-98d0-eb11ed268633;Ledeni Ä�aj Å¡umsko voÄ‡e;150;OsveÅ¾ava;250;ml;2;
+c205728d-d1fb-4045-801f-56fbf9df4df0;Coke;150;OsveÅ¾ava;250;ml;0;
+0e7006f4-0db7-4692-90e1-88b869bfbad1;RiÅ¾oto;400;Suvo zlato;100;g;0;

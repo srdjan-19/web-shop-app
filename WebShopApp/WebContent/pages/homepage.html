@@ -1,0 +1,88 @@
+<section class="intro">
+	<div class="container col-lg-12">
+		<div class="row">
+			<div class="col-lg-6 col-sm-12" data-ng-controller="restarauntCtrl">
+				<div class="container-fluid">
+					<div class="row text-center">
+						<p class="h4 text-warning font-weight-bold col-sm mx-4 my-4">RESTARAUNTS CATEGORIES</p>
+						<a class="btn btn-warning text-white text-center col-sm font-weight-bold mx-4 my-4"
+							role="button" href="#restaraunts">MORE ABOUT RESTARAUNTS</a>
+					</div>
+				</div>
+				<div id="restaraunt-categories">
+					<div data-ng-repeat="category in categories">
+						<div class="card mx-4">
+							<div class="card-header bg-dark" id="heading-{{category}}">
+								<h5 class="mx-4">
+									<span class="btn font-weight-bold text-white" data-toggle="collapse"
+										data-target="#collapse-{{category}}" aria-expanded="false"
+										aria-controls="collapse-{{category}}">
+										{{category.replace("_", " ")}}
+									</span>
+								</h5>
+							</div>
+							<div id="collapse-{{category}}" class="collapse" aria-labelledby="heading-{{category}}"
+								data-parent="#restaraunt-categories">
+								<div class="card-body bg-secondary">
+									<div class="list-group-item d-flex justify-content-between align-items-center bg-secondary"
+										data-ng-repeat="r in restaraunts | filter:{category: category}">
+										<div class="btn font-weight-bold text-white" data-toggle="collapse"
+											data-target="#r-{{$id}}" aria-expanded="false" aria-controls="r-r.name"
+											data-ng-bind="r.name">
+										</div>
+										<ul class="collapse mt-2" id="r-{{$id}}">
+											<li class="list-group-item list-group-item-warning"
+												data-ng-repeat="dish in r.dishes" data-ng-bind="dish.name">
+											</li>
+											<li class="list-group-item list-group-item-warning"
+												data-ng-if="r.dishes.length == 0">
+												This restaraunt does not have any dishes yet.
+											</li>
+											<li class="list-group-item list-group-item-info"
+												data-ng-repeat="drink in r.drinks" data-ng-bind="drink.name">
+											</li>
+											<li class="list-group-item list-group-item-info"
+												data-ng-if="r.drinks.length == 0">
+												This restaraunt does not have any drinks yet.
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12" data-ng-controller="articleCtrl">
+				<div class="row">
+					<div class="col-lg-6 col-sm-6">
+						<div class="text-center">
+							<p class="h	4  text-warning font-weight-bold my-4">TOP 10 DRINKS</p>
+						</div>
+						<ul class="list-group-center mr-4"
+							data-ng-repeat="drink in topDrinks  | orderBy: '-popularity'">
+							<li class="list-group-item list-group-item-dark text-white">
+								<i class="fab fa-untappd"></i>
+								<span class="ml-2" data-ng-bind="drink.name"></span>
+								<span class="badge badge-danger badge-pill ml-2" data-ng-bind="drink.popularity"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-6 col-sm-6">
+						<div class="text-center">
+							<p class="h4  text-warning font-weight-bold my-4">TOP 10 DISHES</p>
+						</div>
+						<ul class="list-group-center mr-4" data-ng-repeat="dish in topDishes  | orderBy: '-popularity'">
+							<li class="list-group-item list-group-item-dark text-white">
+								<i class="fas fa-drumstick-bite"></i>
+								<span class="ml-2" data-ng-bind="dish.name"></span>
+								<span class="badge badge-danger badge-pill ml-2" data-ng-bind="dish.popularity"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

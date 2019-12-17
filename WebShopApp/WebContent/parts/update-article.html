@@ -1,0 +1,30 @@
+<div data-ng-if="adminOnly" class="modal fade" id="popUpdate" tabindex="-1" role="dialog" aria-labelledby="popUpdate"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="w-50 mx-auto pb-4">
+                <form method="post" data-ng-submit="updateArticle(aupdate)">
+                    <div class="form-group">
+                        <div class="modal-header">
+                            <div class="text-center">
+                                <p class="h4  text-warning text-center font-weight-bold mt-4">UPDATE
+                                    ARTICLE</p>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control my-3" placeholder="Name"
+                                data-ng-model="aupdate.name">
+                            <input type="text" class="form-control mt-3" placeholder="Price"
+                                data-ng-model="aupdate.price"><br>
+                            <input type="text" class="form-control" placeholder="Description"
+                                data-ng-model="aupdate.description"><br>
+                        </div>
+                        <button type="submit" class="btn btn-outline-warning btn-block font-weight-bold">SAVE</button>
+                        <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold"
+                            data-dismiss="modal">CLOSE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

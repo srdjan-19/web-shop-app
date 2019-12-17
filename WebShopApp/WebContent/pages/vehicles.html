@@ -1,0 +1,125 @@
+<section class="intro">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 mr-4">
+				<div data-ng-controller="vehicleCtrl">
+					<section class="intro">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-lg-3 col-sm-12 text-center" data-ng-show="adminOnly">
+									<div class="mt-4 mx-2">
+										<a class="btn btn-success mr-2 font-weight-bold text-white" data-toggle="modal"
+											data-target="#popCreate" aria-expanded="false">CREATE NEW VEHICLE</a>
+									</div>
+								</div>
+								<div class="col-lg-9 col-sm-12 mx-auto ">
+									<div class="row">
+										<div class="col-lg-2 col-sm-6">
+											<div class="mt-2 mx-2">
+												<div class="active-cyan-3 active-cyan-4 mb-4 ">
+													<label class="input-group-text font-weight-bold">BRAND</label>
+													<input class="form-control" type="text" placeholder="Search"
+														aria-label="Search" data-ng-model="searchBrand">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 col-sm-6">
+											<div class="mt-2 mx-2">
+												<div class="active-cyan-3 active-cyan-4 mb-4 ">
+													<label class="input-group-text font-weight-bold">MODEL</label>
+													<input class="form-control" type="text" placeholder="Search"
+														aria-label="Search" data-ng-model="searchModel">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 col-sm-6">
+											<div class="mt-2 mx-2">
+												<div class="active-cyan-3 active-cyan-4 mb-4 ">
+													<label class="input-group-text font-weight-bold">TYPE</label>
+													<input class="form-control" type="text" placeholder="Search"
+														aria-label="Search" data-ng-model="searchType">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 col-sm-6">
+											<div class="mt-2 mx-2">
+												<div class="active-cyan-3 active-cyan-4 mb-4 ">
+													<label
+														class="input-group-text font-weight-bold">MANUFACTURED</label>
+													<input class="form-control" type="text" placeholder="Search"
+														aria-label="Search" data-ng-model="searchManufactured">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 col-sm-6">
+											<div class="mt-2 mx-2">
+												<div class="active-cyan-3 active-cyan-4 mb-4 ">
+													<label class="input-group-text font-weight-bold">USAGE</label>
+													<input class="form-control" type="text" placeholder="Search"
+														aria-label="Search" data-ng-model="searchUsage">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div>
+						<table class="table table-dark table-striped table-hover text-center mr-4 my-4 w-100">
+							<tr class="thead-dark">
+								<th>Brand</th>
+								<th>Model</th>
+								<th>Type</th>
+								<th>Registration</th>
+								<th>Manufactured</th>
+								<th>Usage</th>
+								<th>Note</th>
+								<th data-ng-show="adminOnly">Actions</th>
+								<th data-ng-show="delivererOnly">Take vehicle</th>
+							</tr>
+							<tr class="orange"
+								data-ng-repeat="vehicle in vehicles | filter: {brand: searchBrand, model: searchModel, type: searchType, manufactured: searchManufactured, usage: searchUsage}">
+								<td>{{vehicle.brand }}</td>
+								<td>{{vehicle.model}}</td>
+								<td>{{vehicle.type}}</td>
+								<td>{{vehicle.registrationNumber}}</td>
+								<td>{{vehicle.manufactured}}</td>
+								<td>{{vehicle.usage}}</td>
+								<td>{{vehicle.note}}</td>
+								<td data-ng-show="adminOnly">
+									<div class="container-fluid">
+										<div class="row">
+											<a class="btn btn-warning mr-2 text-white font-weight-bold"
+												data-ng-show="adminOnly" data-toggle="modal" data-target="#popUpdate"
+												aria-expanded="false" data-ng-click="prepareVehicle(vehicle)">UPDATE</a>
+											<a class="btn btn-danger mr-2 text-white font-weight-bold"
+												data-ng-show="adminOnly"
+												data-ng-click="deleteVehicle(vehicle.id)">DELETE</a>
+											<div class="input-group-prepend mr-2 w-50" data-ng-model="deliverers">
+												<select class="custom-select" data-ng-model="delivererUN" required>
+													<option data-ng-repeat="d in deliverers" selected> {{d.username}}
+													</option>
+												</select>
+												<label class="input-group-text font-weight-bold"
+													data-ng-click="assignVehicle(delivererUN, vehicle)">ASSIGN</label>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td data-ng-show="delivererOnly">
+									<a class="btn btn-outline-info text-info mr-2 text-white font-weight-bold"
+										data-ng-show="delivererOnly" data-ng-click="takeVehicle(vehicle)">TAKE</a>
+								</td>
+							</tr>
+						</table>
+						<div data-ng-include="'parts/message-success.html'"></div>
+						<div data-ng-include="'parts/message-error.html'"></div>
+					</div>
+					<div data-ng-include="'parts/create-vehicle.html'"></div>
+					<div data-ng-include="'parts/update-vehicle.html'"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

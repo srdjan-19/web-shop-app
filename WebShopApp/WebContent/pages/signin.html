@@ -1,0 +1,24 @@
+<div data-ng-controller="userCtrl" class="p-3 mb-2 bg-gradient-primary">
+	<form method="post" data-ng-submit="signin(log)">
+		<div class="text-center">
+			<p class="h4  text-dark font-weight-bold my-4">
+				SIGN IN
+			</p>
+			<i class="fas fa-user-tie icon-large"></i>
+		</div>
+		<div class="form-group mx-auto w-25">
+			<input type="text" class="form-control my-3" placeholder="username" data-ng-model="log.username">
+			<input type="password" class="form-control mb-3" placeholder="password" data-ng-model="log.password">
+			<button type="submit" class="btn btn-outline-dark btn-block font-weight-bold">LOGIN</button>
+		</div>
+
+		<div class="text-center mx-auto">
+			<p class="h6  text-dark my-4">Not a member?</p>
+			<a class="btn btn-dark font-weight-bold" href="#signup" role="button">
+				SIGN UP
+			</a>
+		</div>
+	</form>
+</div>
+
+<div data-ng-include="'parts/message-error.html'"></div>

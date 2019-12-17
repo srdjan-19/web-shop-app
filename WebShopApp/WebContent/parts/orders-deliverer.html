@@ -1,0 +1,60 @@
+<div data-ng-if="delivererOnly">
+    <div class="card card-header w-75 mx-auto">
+        <div class="mx-auto text-center" id="headingOne" data-ng-if="toDelivery !== null">
+            <h5 class="my-4 mx-auto">
+                <button class="btn btn-warning text-white font-weight-bold" data-toggle="collapse"
+                    data-target="#orderToDelivery" aria-expanded="false" aria-controls="orderToDelivery">
+                    ORDER TO DELIVERY
+                </button>
+            </h5>
+        </div>
+        <div class="mx-auto w-25">
+            <div id="orderToDelivery" class="collapse mt-4">
+                <div class="card bg-secondary text-white text-center mx-4 mb-4" data-ng-model="toDelivery">
+                    <div class="card-body">
+                        <div>
+                            <span>DATE: {{toDelivery.dateOfOrder}}</span>
+                        </div>
+                        <div>
+                            <span>TO: {{toDelivery.buyer.username}}</span>
+                        </div>
+                        <div>
+                            <span>NOTE: {{toDelivery.note}}</span>
+                        </div>
+                        <div>
+                            <span>BILL: {{toDelivery.bill}}</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-warning text-white" data-ng-click="deliveryDone()">DONE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-columns mx-2">
+        <div class="card bg-dark text-white text-center w-100 my-4" data-ng-repeat="order in undelivered">
+            <div class="card-body">
+                <div>
+                    <span>DATE: {{order.dateOfOrder}}</span>
+                </div>
+                <div>
+                    <span>TO: {{order.buyer.username}}</span>
+                </div>
+                <div>
+                    <span>NOTE: {{order.note}}</span>
+                </div>
+
+                <div>
+                    <span>STATE: {{order.state}}</span>
+                </div>
+                <div>
+                    <span>BILL: {{order.bill}}</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-warning text-white" data-ng-click="takeOrder(order)">TAKE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

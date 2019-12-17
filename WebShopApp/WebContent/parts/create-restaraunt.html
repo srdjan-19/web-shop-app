@@ -1,0 +1,38 @@
+<div class="modal fade" id="popCreate" tabindex="-1" role="dialog" aria-labelledby="popCreate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="w-50 mx-auto pb-4">
+                <form method="post" data-ng-submit="createRestaraunt(restaraunt)">
+                    <div class="modal-header text-center">
+                        <p class="h4 text-success font-weight-bold mt-4">CREATE
+                            RESTARAUNT</p>
+                    </div>
+                    <div class="form-group mx-auto">
+                        <input type="text" class="form-control my-3" placeholder="Name" data-ng-model="restaraunt.name"
+                            required>
+                        <input type="text" class="form-control mt-3" placeholder="Address"
+                            data-ng-model="restaraunt.address" required><br>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                            </div>
+                            <select class="custom-select" data-ng-model="restaraunt.category" required>
+                                <option value="DOMESTIC">DOMESTIC</option>
+                                <option value="GRILL">GRILL</option>
+                                <option value="CHINESE">CHINESE</option>
+                                <option value="INDIAN">INDIAN</option>
+                                <option value="CANDY_SHOP">CANDY SHOP</option>
+                                <option value="PIZZERIA">PIZZERIA</option>
+                            </select>
+                        </div>
+                        <button type="submit"
+                            class="btn btn-outline-success font-weight-bold btn-block">CONFIRM</button>
+                        <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold"
+                            data-dismiss="modal">CLOSE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

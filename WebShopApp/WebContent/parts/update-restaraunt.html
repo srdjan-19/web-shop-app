@@ -1,0 +1,38 @@
+<div class="modal fade" id="popUpdate" tabindex="-1" role="dialog" aria-labelledby="popUpdate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" data-ng-submit="updateRestaraunt(rupdate)">
+                <div class="form-group mx-auto" style="width: 300px;">
+                    <div class="modal-header">
+                        <div class="text-center">
+                            <p class="h4  text-warning font-weight-bold mt-4">UPDATE RESTARAUNT
+                            </p>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control my-3" placeholder="Name" data-ng-model="rupdate.name">
+                    <input type="text" class="form-control mt-3" placeholder="Address"
+                        data-ng-model="rupdate.address"><br>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">CATEGORY</label>
+                        </div>
+                        <select class="custom-select" data-ng-model="rupdate.category">
+                            <option value="DOMESTIC" selected>DOMESTIC</option>
+                            <option value="GRILL">GRILL</option>
+                            <option value="CHINESE">CHINESE</option>
+                            <option value="INDIAN">INDIAN</option>
+                            <option value="CANDY_SHOP">CANDY SHOP</option>
+                            <option value="PIZZERIA">PIZZERIA</option>
+                        </select>
+                    </div>
+                    <div class="mt-4 pb-4">
+                        <button type="submit"
+                            class="btn btn-outline-warning btn-block font-weight-bold my-3">SAVE</button>
+                        <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold my-3"
+                            data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

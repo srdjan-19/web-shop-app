@@ -1,0 +1,51 @@
+<div data-ng-if="adminOnly" class="modal fade" id="popUpdate" tabindex="-1" role="dialog" aria-labelledby="popUpdate"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" class="mx-auto w-50"
+                data-ng-submit="updateOrder(oupdate, newBuyer, newDeliverer)">
+                <div class="form-group mx-auto">
+                    <div class=" modal-header">
+                        <div class="text-center">
+                            <p class="h4 text-warning text-center font-weight-bold mt-4">UPDATE
+                                ORDER</p>
+                        </div>
+                    </div>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">BUYER</label>
+                        </div>
+                         <select class="custom-select" data-ng-model="newBuyer" required>
+                         	<option data-ng-repeat="buyer in buyers" selected> 
+                            	{{buyer.username}}
+						 	</option>
+                          </select>
+                    </div>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">DELIVERER</label>
+                        </div>
+                          <select class="custom-select" data-ng-model="newDeliverer" required>
+                          	<option data-ng-repeat="deliverer in deliverers" selected>
+                           		{{deliverer.username}}
+                            </option>
+                          </select>
+                    </div>
+                    <select class="custom-select" data-ng-model="oupdate.state">
+                        <option value="ORDERED" selected>ORDERED</option>
+                        <option value="IN_PROGRESS">IN PROGRESS</option>
+                        <option value="CANCELED">CANCELED</option>
+                        <option value="DELIVERED">DELIVERED</option>
+                    </select>
+                    <input type="text" class="form-control my-3" placeholder="Note" data-ng-model="oupdate.note">
+                    <div class="mt-4 pb-4">
+                        <button type="submit"
+                            class="btn btn-outline-warning btn-block font-weight-bold my-3">SAVE</button>
+                        <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold my-3"
+                            data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

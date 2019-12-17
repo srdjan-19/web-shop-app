@@ -1,0 +1,51 @@
+<div class="modal fade" id="popUpdate" tabindex="-1" role="dialog" aria-labelledby="popUpdate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="w-50 mx-auto pb-4">
+                <form method="post" data-ng-submit="updateVehicle()">
+                    <div class="form-group">
+                        <div class="modal-header">
+                            <div class="text-center">
+                                <p class="h4  text-warning font-weight-bold mt-4">UPDATE VEHICLE</p>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control my-3" placeholder="Brand" data-ng-model="vupdate.brand">
+                        <input type="text" class="form-control mt-3" placeholder="Model"
+                            data-ng-model="vupdate.model"><br>
+                        <input type="text" class="form-control" placeholder="Registration number"
+                            data-ng-model="vupdate.registrationNumber"><br>
+                        <input type="text" class="form-control" placeholder="Manufactured"
+                            data-ng-model="vupdate.manufactured"><br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Usage</label>
+                            </div>
+                            <select class="custom-select" data-ng-model="vupdate.usage" required>
+                                <option value="AVAILABLE">AVAILABLE</option>
+                                <option value="NOT_AVAILABLE">NOT AVAILABLE</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                            </div>
+                            <select class="custom-select" data-ng-model="vupdate.type" required>
+                                <option value="BICYCLE">BICYCLE</option>
+                                <option value="SCOOTER">SCOOTER</option>
+                                <option value="CAR">CAR</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control mt-3" placeholder="Note"
+                            data-ng-model="vupdate.note"><br>
+                        <div>
+                            <button type="submit"
+                                class="btn btn-outline-warning btn-block font-weight-bold">SAVE</button>
+                            <button type="button" class="btn btn-outline-secondary btn-block font-weight-bold"
+                                data-dismiss="modal">CLOSE</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

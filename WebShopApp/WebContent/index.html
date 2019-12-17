@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html data-ng-app="WebShopApp">
+
+<head>
+	<meta charset="ISO-8859-1">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="pics/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="css/bootstrap.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/service/userService.js"></script>
+	<script src="app/controller/userController.js"></script>
+		<script src="app/controller/appController.js"></script>
+	
+	<script src="app/controller/restarauntController.js"></script>
+	<script src="app/service/restarauntService.js"></script>
+	<script src="app/controller/vehicleController.js"></script>
+	<script src="app/service/vehicleService.js"></script>
+	<script src="app/controller/articleController.js"></script>
+	<script src="app/service/articleService.js"></script>
+	<script src="app/controller/orderController.js"></script>
+	<script src="app/service/orderService.js"></script>
+
+</head>
+
+<body class="bckg">
+	<div data-ng-controller="appCtrl">
+		<nav class="navbar mb-4 pb-2 nav-custom">
+			<div class="container-fluid">
+				<nav class="navbar-header flex-column">
+					<a class="navbar-brand" href="#"><img src="pics/logo.png"></a>
+				</nav>
+				<!-- orderctrl -->
+				<ul class="nav nav-pills">
+					<li class="nav-item mt-2 ml-4" data-ng-if="delivererOnly || adminOnly">
+						<a class="btn font-weight-bold orange" href="#users">
+							<i class='fas fa-users icon'></i>
+							<br />
+							USERS
+						</a>						
+					</li>
+					<li class="nav-item mt-2 ml-4" data-ng-if="delivererOnly || adminOnly">
+						<a class="btn font-weight-bold orange" href="#vehicles">
+							<i class='fas fa-car icon'></i>
+							<br />
+							VEHICLES
+						</a>
+					</li>
+					<li class="nav-item mt-2 ml-4">
+						<a class="btn font-weight-bold orange" href="#articles">
+							<i class="fas fa-cookie-bite icon"></i>
+							<br />
+							ARTICLES
+						</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="btn  font-weight-bold orange" href="#restaraunts">
+							<i class="fas fa-utensils icon"></i>
+							<br />
+							RESTARAUNTS
+						</a>
+					</li>
+					<li class="nav-item mt-2 mr-4">
+						<a class="btn font-weight-bold orange" href="#profile" data-ng-if="buyerOnly">
+							<i class='fas fa-id-card icon'></i>
+							<br />
+							PROFILE
+						</a>
+					</li>
+					<li class="nav-item mt-2" data-ng-if="adminOnly">
+						<a class="btn font-weight-bold orange" href="#orders" data-ng-model="currentNumberOfArticles">
+							<i class='fas fa-shopping-basket icon'>
+								({{currentNumberOfArticles}})
+							</i>
+							<br />
+							ORDER
+						</a>
+					</li>
+					 <li class="nav-item mt-2 orange" data-ng-if="buyerOnly" data-ng-controller="orderCtrl" data-ng-click="findOrderedArticles()">
+						<a class="btn font-weight-bold" data-ng-model="currentNumberOfArticles"  
+							data-toggle="modal" data-target="#popCompleteOrder" aria-expanded="false" >
+							<i class='fas fa-shopping-basket icon'>
+								({{currentNumberOfArticles}})
+							</i>
+							<br />
+							ORDER
+						</a>
+						<div data-ng-include="'parts/message-error.html'"></div>
+						<div data-ng-include="'parts/orders-buyer.html'"></div>
+					</li>
+					<li class="nav-item mt-2 ml-4" data-ng-if="delivererOnly">
+						<a class="btn font-weight-bold orange" href="#orders">
+							<i class='fas fa-cart-arrow-down icon'></i>
+							<br />
+							ORDERS
+						</a>
+					</li>
+					<li class="nav-item mt-2 ml-4" data-ng-controller="userCtrl">
+						<a class="btn  font-weight-bold orange" href="#signup" data-ng-if="!userSignedIn">
+							<i class='fas fa-user-plus icon'></i>
+							<br />
+							SIGN UP
+						</a>
+					</li>
+					<li class="nav-item mt-2 mr-4" data-ng-controller="userCtrl">
+						<a class="btn  font-weight-bold orange" href="#signin" data-ng-if="!userSignedIn">
+							<i class='fas fa-arrow-circle-up icon'></i>
+							<br />
+							SIGN IN
+						</a>
+					</li>
+					<li class="nav-item mt-2" data-ng-controller="userCtrl">
+						<a class="btn font-weight-bold orange" data-ng-click="signout()" data-ng-if="userSignedIn">
+							<i class='fas fa-arrow-circle-down icon orange'></i>
+							<br />
+							<span class="orange">SIGN OUT</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div data-ng-view></div>
+
+</body>
+
+</html>
